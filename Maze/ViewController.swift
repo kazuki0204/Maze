@@ -12,8 +12,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     let bgmPlayer = try! AVAudioPlayer(data: NSDataAsset(name: "05")!.data)
-    let bgm2Player = try! AVAudioPlayer(data: NSDataAsset(name: "06")!.data)
-    let bgm3Player = try! AVAudioPlayer(data: NSDataAsset(name: "09")!.data)
+
     
     var playerView: UIView!
     var bgmAudioPlayer:AVAudioPlayer?
@@ -50,9 +49,6 @@ class ViewController: UIViewController {
         bgmPlayer.numberOfLoops = -1
         bgmPlayer.prepareToPlay()
         bgmPlayer.play()
-        bgm2Player.numberOfLoops = -1
-        bgm2Player.prepareToPlay()
-        bgm2Player.play()
         
         let cellWidth = screenSize.width / CGFloat(maze[0].count)
         let cellHeight = screenSize.height / CGFloat(maze.count)
@@ -99,9 +95,6 @@ class ViewController: UIViewController {
     }
     
     func createView(x: Int, y: Int, width: CGFloat, height: CGFloat, offsetX: CGFloat, offsetY: CGFloat) -> UIView {
-        
-        bgm3Player.currentTime = 0
-        bgm3Player.play()
         
         let rect = CGRect(x: 0, y: 0, width: width, height: height)
         let view = UIView(frame: rect)
